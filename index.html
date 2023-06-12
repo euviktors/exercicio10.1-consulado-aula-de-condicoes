@@ -9,36 +9,36 @@
 <body>
   <h1>Sistema Avançado Nacionalidade - 2023</h1>
   <p>Este é um sistema super avançado, com tecnologias de último nível.</p>
-  <p>Usando os conceitos que foi ensinado no Curso em Video. </br>
-  Link da aula com o conteudo </p> 
-  <a href="https://www.youtube.com/watch?v=cOdG4eACN2A&t=36s"> Clique aqui para ver</a></br>
-  </br> Digite em que país você nasceu: </br></br><input type="text" name="pais" id="pais"> </br></br>
+  <p>Usando os conceitos que foram ensinados no Curso em Video.</p>
+  <p>Link da aula com o conteúdo: <a href="https://www.youtube.com/watch?v=cOdG4eACN2A&t=36s">Clique aqui para ver</a></p>
+  <br>
+  Digite o país em que você nasceu:
+  <br><br>
+  <input type="text" name="pais" id="pais">
+  <br><br>
   <input type="button" value="Verificar" onclick="verificando()">
-  <div id="res">
-
-  </div>
-
+  <div id="res"></div>
 
   <script>
-    function verificando(){
+    function verificando() {
       var uf = window.document.querySelector('input#pais'); // Seleciona o elemento de entrada de texto pelo ID
       var res = window.document.querySelector('div#res'); // Seleciona a div de resultado pelo ID
-      var verificar = uf.value; // Obtém o valor do campo de texto
-      // Verifica se a pessoa é brasileira ou não.
-      if(verificar.toLowerCase() === 'brasil'||'br'){ // aqui ele verifica o que foi digital se foi brasil ou br
-        res.innerHTML += `<p> Você é brasileiro(a).</p>`;
+      var verificar = uf.value.toLowerCase(); // Converte o valor do campo de texto para letras minúsculas
+
+      if (verificar === 'brasil' || verificar === 'br') { // Verifica se o valor digitado é "Brasil" ou "br"
+        res.innerHTML = `<p>Você é brasileiro(a).</p>`;
       } else {
-        res.innerHTML += `<p> Você é estrangeiro(a).</p>`;
-        //console.log('<p> Você é estrangeiro(a).</p>')
+        res.innerHTML = `<p>Você é estrangeiro(a).</p>`;
       }
 
-      res.innerHTML += `<p>Bem vindo(a) ao Consulado Tech</p>`; // Exibe a mensagem final
-      /*uf.value = ''; // Limpa o valor do campo de texto
-      setTimeout(function() {
-      res.innerHTML = ''; // Limpa o resultado após 3 segundos
-     }, 3000); */
-    }
+      res.innerHTML += `<p>Bem-vindo(a) ao Consulado Tech.</p>`; // Exibe a mensagem final
 
+      uf.value = ''; // Limpa o valor do campo de texto
+
+      setTimeout(function() {
+        res.innerHTML = ''; // Limpa o resultado após 3 segundos
+      }, 3000);
+    }
   </script>
 </body>
 </html>
